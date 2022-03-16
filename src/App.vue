@@ -15,23 +15,19 @@
           class="col-12"
           v-if="DataPoke.sprites.other.dream_world.front_default"
         >
-          <img class="border formatimg" :src="imgPoke" alt="" width="200px" />
+          <img class="mt-3 border formatimg" :src="imgPoke" alt="" width="200px" />
         </div>
-        <div class="col-12">
-          <ul>
-            <li><h4>Habilidades</h4></li>
-            <li v-for="(movimiento, i) of moviPoke" :key="i">
-              {{ movimiento.move.name }}
-            </li>
-          </ul>
+        <div class="mt-3 col-12">
+          <h4>Movimientos</h4>
+          <p class="mt-0 mb-0" v-for="(movimiento, i) of moviPoke" :key="i">
+            {{ movimiento.move.name }}
+          </p>
         </div>
-        <div class="col-12">
-          <ul>
-            <li><h4>Habilidades</h4></li>
-            <li v-for="(habilidad, i) of habilidadPoke" :key="i">
-              {{ habilidad.ability.name }}
-            </li>
-          </ul>
+        <div class="mt-3 col-12">
+          <h4>Habilidades</h4>
+          <p class="mt-0 mb-0" v-for="(habilidad, i) of habilidadPoke" :key="i">
+            {{ habilidad.ability.name }}
+          </p>
         </div>
       </div>
     </div>
@@ -105,7 +101,7 @@ export default {
   margin-top: 60px;
 }
 .formatimg {
-  background-color:  gray;
+  background-color: gray;
   border-radius: 50px;
 }
 </style>
