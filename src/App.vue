@@ -9,24 +9,29 @@
         <div class="col-12">
           Nombre:
           <input type="text" v-model="pokemon" />
-          <button @click="buscaPoke">Buscar</button>
+          <button class="btn-success" @click="buscaPoke">Buscar</button>
         </div>
         <div
           class="col-12"
           v-if="DataPoke.sprites.other.dream_world.front_default"
         >
-          <img class="mt-3 border formatimg" :src="imgPoke" alt="" width="200px" />
+          <img
+            class="mt-3 border formatimg"
+            :src="imgPoke"
+            alt=""
+            width="200px"
+          />
         </div>
         <div class="mt-3 col-12">
           <h4>Movimientos</h4>
           <p class="mt-0 mb-0" v-for="(movimiento, i) of moviPoke" :key="i">
-            {{ movimiento.move.name }}
+            * {{ movimiento.move.name }} *
           </p>
         </div>
         <div class="mt-3 col-12">
           <h4>Habilidades</h4>
           <p class="mt-0 mb-0" v-for="(habilidad, i) of habilidadPoke" :key="i">
-            {{ habilidad.ability.name }}
+            * {{ habilidad.ability.name }} *
           </p>
         </div>
       </div>
@@ -39,7 +44,7 @@ export default {
   name: "App",
   data() {
     return {
-      pokemon: "venusaur",
+      pokemon: "pikachu",
       URL: "https://pokeapi.co/api/v2/pokemon/",
       DataPoke: {},
       imgnoencontrado: "src/assets/img/noencontrado.jpg",
@@ -92,7 +97,6 @@ export default {
 <style lang="scss">
 #app {
   background-image: url(../public/fondo.jpg);
-
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -100,8 +104,19 @@ export default {
   color: black;
   margin-top: 60px;
 }
+.clase1 {
+  color: red;
+}
+.clase2 {
+  color: blue;
+}
+.clase2 {
+  color: green;
+}
+
 .formatimg {
   background-color: gray;
   border-radius: 50px;
+  box-shadow: 20px 20px 50px yellowgreen;
 }
 </style>
